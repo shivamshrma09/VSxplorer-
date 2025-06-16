@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RecipeDekho</title>
+  <style>
+    :root {
+      --primary: #0e4682;
+      --secondary: #0e3182;
+      --accent: #00bfff;
+      --button: #0e3182;
+      --button-hover: #0e4682;
+      --bg-dark: #0e0e2c;
+      --card-bg: #1c1c3c;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg-dark);
+      color: #fff;
+      min-height: 100vh;
+    }
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: var(--secondary);
+      color: white;
+    }
+    .name h1 { font-size: 24px; }
+    .btn button {
+      margin-left: 10px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      background-color: var(--primary);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn button:hover { background-color: var(--secondary); }
+    #recipeInput {
+      margin-left: 10vw;
+      width: 70vw;
+      height: 40px;
+      margin-top: 60px;
+      border-radius: 7px;
+      border: 2px solid blue;
+    }
+    .button1 {
+      height: 40px;
+      width: 80px;
+      font-weight: bold;
+      border-radius: 7px;
+      background-color: red;
+      color: white;
+    }
+    .input h2 {
+      font-size: 30px;
+      margin-left: 120px;
+      color: white;
+    }
+    .t {
+      margin: 40px 0 18px 20px;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .genre-select-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .genre-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 18px 28px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+    .genre-card label {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    #genre {
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 2px solid var(--accent);
+      font-size: 1rem;
+      background: #18183a;
+      color: #fff;
+      outline: none;
+    }
+    .trending-wrapper {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .trending {
+      overflow-x: auto;
+      padding: 10px 0 20px 0;
+      scrollbar-width: thin;
+    }
+    .scroll-track {
+      display: flex;
+      gap: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      color: #fff;
+      width: 260px;
+      min-width: 260px;
+      height: 420px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 16px 14px 10px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .card p {
+      font-size: 0.98rem;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      font-size: 1.7rem;
+      cursor: pointer;
+      z-index: 5;
+      border-radius: 50%;
+    }
+    .left-btn { left: 2px; }
+    .right-btn { right: 2px; }
+
+    .card1 {
+      display: flex;
+      align-items: flex-start;
+      border-radius: 1px;
+      padding: 3px 40px;
+      max-width: 700px;
+      margin: 40px auto;
+      color: #fff;
+      gap: 36px;
+    }
+    .card1 img {
+      width: 270px;
+      height: 178px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    }
+    .card1-content h1 {
+      font-size: 2.1rem;
+      color: #00bfff;
+      margin-bottom: 6px;
+    }
+    .card1-content .overview p {
+      font-size: 1.08rem;
+      color: #cbd5e1;
+    }
+    .card1-content .info-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 4px 0;
+      font-size: 1.08rem;
+    }
+    .card1-content .label {
+      color: #00bfff;
+      font-weight: 600;
+    }
+    .card1-content .trailer-link {
+      color: #00bfff;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <div class="name"><h1>RecipeDekho</h1></div>
+    <div class="btn">
+      <button>Home</button>
+      <button>About</button>
+      <a href="https://github.com/shivamshrma09" target="_blank"><button>Github</button></a>
+      <a href="https://www.linkedin.com/in/shivam-kumar-321810324/" target="_blank"><button>LinkedIn</button></a>
+    </div>
+  </div>
+
+  <div class="input">
+    <input type="text" id="recipeInput" placeholder="Search your favourite recipe..." />
+    <button class="button1" onclick="searchRecipe()">Search</button>
+    <br><br>
+    <h2>Find your Favourite Recipe!</h2>
+  </div>
+
+  <div class="card1" id="recipeContainer"></div>
+
+  <h1 class="t">Trending Recipes</h1>
+  <div class="trending-wrapper">
+    <button class="scroll-btn left-btn" onclick="scrollLeft('trendingTrack')">&#8592;</button>
+    <div class="trending">
+      <div class="scroll-track" id="trendingTrack"></div>
+    </div>
+    <button class="scroll-btn right-btn" onclick="scrollRight('trendingTrack')">&#8594;</button>
+  </div>
+
+  <h1 class="t">Select Recipe Category :</h1>
+  <div class="genre-select-wrapper">
+    <div class="genre-card">
+      <label for="genre">Choose Category</label>
+      <select id="genre">
+        <option value="">-- Select Category --</option>
+      </select>
+    </div>
+  </div>
+
+  <h1 class="t">New Recipes</h1>
+  <div class="trending-wrapper">
+    <button class="scroll-btn left-btn" onclick="scrollLeft('upcomingTrack')">&#8592;</button>
+    <div class="trending">
+      <div class="scroll-track" id="upcomingTrack"></div>
+    </div>
+    <button class="scroll-btn right-btn" onclick="scrollRight('upcomingTrack')">&#8594;</button>
+  </div>
+
+  <script>
+    async function searchRecipe() {
+      const input = document.getElementById("recipeInput").value;
+      const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      showMainRecipe(data.meals?.[0]);
+    }
+
+    function showMainRecipe(meal) {
+      if (!meal) return;
+      const container = document.getElementById("recipeContainer");
+      container.innerHTML = `
+        <img src="${meal.strMealThumb}" />
+        <div class="card1-content">
+          <h1>${meal.strMeal}</h1>
+          <div class="overview"><p>${meal.strInstructions.slice(0, 300)}...</p></div>
+          <div class="info-row"><span class="label">Category:</span>${meal.strCategory}</div>
+          <div class="info-row"><span class="label">Area:</span>${meal.strArea}</div>
+          <a class="trailer-link" href="${meal.strYoutube}" target="_blank">Watch Recipe Video</a>
+        </div>
+      `;
+    }
+
+    function scrollLeft(id) {
+      document.getElementById(id).scrollBy({ left: -300, behavior: "smooth" });
+    }
+
+    function scrollRight(id) {
+      document.getElementById(id).scrollBy({ left: 300, behavior: "smooth" });
+    }
+
+    async function loadTrending() {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=chicken`);
+      const data = await res.json();
+      const track = document.getElementById("trendingTrack");
+      track.innerHTML = '';
+      data.meals.slice(0, 10).forEach(meal => {
+        track.innerHTML += `
+          <div class="card" onclick='showMainRecipe(${JSON.stringify(meal).replace(/'/g, "")})'>
+            <img src="${meal.strMealThumb}" />
+            <div class="card-content">
+              <h3>${meal.strMeal}</h3>
+              <p>${meal.strCategory}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    async function loadCategories() {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`);
+      const data = await res.json();
+      const select = document.getElementById("genre");
+      data.meals.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c.strCategory;
+        opt.innerText = c.strCategory;
+        select.appendChild(opt);
+      });
+
+      select.addEventListener("change", async () => {
+        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${select.value}`);
+        const data = await res.json();
+        const track = document.getElementById("upcomingTrack");
+        track.innerHTML = '';
+        data.meals.slice(0, 10).forEach(meal => {
+          track.innerHTML += `
+            <div class="card" onclick="searchById('${meal.idMeal}')">
+              <img src="${meal.strMealThumb}" />
+              <div class="card-content">
+                <h3>${meal.strMeal}</h3>
+                <p>${select.value}</p>
+              </div>
+            </div>
+          `;
+        });
+      });
+    }
+
+    async function searchById(id) {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+      const data = await res.json();
+      showMainRecipe(data.meals?.[0]);
+    }
+
+    loadTrending();
+    loadCategories();
+  </script>
+</body>
+</html>
