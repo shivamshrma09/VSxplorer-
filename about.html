@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VSXplorer - About & Features</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+    .accordion-button:not(.collapsed) {
+      color: #fff;
+      background-color: #0d6efd;
+    }
+    .accordion-button {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+    }
+    .accordion-body {
+      background: #fff;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+    .feature-icon {
+      font-size: 1.6rem;
+      margin-right: 0.5rem;
+      color: #0d6efd;
+      vertical-align: middle;
+    }
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 0.5rem;
+      }
+      .accordion-button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light mb-2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><h6>VSXplorer</h6></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Home.html" id="homeNav">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Compare.html">Compare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Home.html" id="bookmarkNav">Bookmark</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recommended</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2 class="mb-4 text-primary fw-bold text-center">About VSXplorer</h2>
+    <div class="accordion shadow-sm" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <span class="feature-icon"></span> What is VSXplorer?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>VSXplorer</strong> is a modern web tool to explore, compare, and bookmark the best <b>VS Code extensions</b> from the Open VSX marketplace.<br>
+            <ul>
+              <li>Discover top extensions by category (Frontend, Backend, Themes, Productivity, etc.)</li>
+              <li>Search any extension by publisher/name</li>
+              <li>Bookmark and manage your favorite extensions</li>
+              <li>Compare extensions side-by-side</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <span class="feature-icon"></span> Key Features
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul>
+              <li><b>Category-wise Browsing:</b> See top extensions grouped by <span class="text-primary">Frontend</span>, <span class="text-success">Backend</span>, <span class="text-warning">Themes</span>, and more.</li>
+              <li><b>Instant Search:</b> Find any extension using publisher/extension format.</li>
+              <li><b>Bookmarks:</b> Save your favorite extensions for quick access. Bookmarks are stored locally in your browser.</li>
+              <li><b>Comparison:</b> Compare two or more extensions feature-by-feature.</li>
+              <li><b>Responsive Design:</b> Looks great on desktop and mobile with a clean, modern UI.</li>
+              <li><b>Hero Section:</b> Engaging hero card for a premium feel on mobile and desktop.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <span class="feature-icon"></span> Themes & Extension Categories
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <b>VSXplorer</b> helps you find extensions in popular categories:
+            <ul>
+              <li><b>Frontend:</b> React, Vue, Angular, HTML, CSS, JavaScript, Tailwind, Bootstrap, etc.</li>
+              <li><b>Backend:</b> Python, Node.js, Java, Go, PHP, Django, Flask, Express, etc.</li>
+              <li><b>Themes:</b> Dracula, One Dark, Night Owl, Material, Monokai, Nord, Tokyo Night, Gruvbox, Solarized, Palenight, Synthwave, Catppuccin, Cobalt, and more.</li>
+              <li><b>Productivity:</b> Prettier, ESLint, Git, Snippets, Live Server, Docker, Markdown, REST Client, etc.</li>
+              <li><b>And many more!</b></li>
+            </ul>
+            <div class="alert alert-info mt-3 mb-0">
+              <b>Tip:</b> Try searching for your favorite theme or tool to see details and bookmark it for later!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <span class="feature-icon"></span> Mobile Experience
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul>
+              <li>Fully responsive and touch-friendly design</li>
+              <li>Large hero card for a premium look on mobile</li>
+              <li>Easy navigation and quick access to bookmarks</li>
+              <li>Accordion and cards are optimized for small screens</li>
+            </ul>
+            <div class="text-center">
+              <img src="https://i.imgur.com/1Q9Z1Zm.png" alt="Mobile Preview" class="img-fluid rounded shadow-sm mt-2" style="max-width:220px;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <span class="feature-icon"></span> Privacy & Data
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul>
+              <li>No login required, no data sent to any server.</li>
+              <li>Your bookmarks and preferences are stored only in your browser (localStorage).</li>
+              <li>All extension data is fetched live from the <b>Open VSX</b> public API.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
